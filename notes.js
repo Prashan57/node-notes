@@ -6,6 +6,8 @@ const addNote = function (title, body) {
   // const duplicateNotes = notes.filter((note) => note.title === title);
   const duplicateNote = notes.find((note) => note.title === title);
 
+  debugger;
+
   if (!duplicateNote) {
     notes.push({
       title: title,
@@ -35,7 +37,7 @@ const saveNotes = (notes) => {
 
 const removeNote = (title) => {
   const notes = loadNotes();
-  const notesToKeep = notes.filter((note) => note.title !== title);
+  const notesToKeep = notes.filter((note) => note.title !== title); //not match = true
   if (notes.length > notesToKeep.length) {
     console.log(chalk.bgGreen("Note removed"));
     saveNotes(notesToKeep);
